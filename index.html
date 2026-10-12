@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prism Heirloom - Secure Your Legacy, Protect Your Future</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+            height: 70px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .logo-tagline {
+            font-size: 10px;
+            color: #999;
+            font-weight: 500;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #667eea;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 20px 60px;
+            margin-top: 70px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .chip {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .highlight {
+            color: #FFD700;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            opacity: 0.95;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .feature-chip {
+            background: rgba(16, 185, 129, 0.25);
+            border: 2px solid rgba(16, 185, 129, 0.6);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .feature-chip:hover {
+            background: rgba(16, 185, 129, 0.35);
+            transform: translateY(-2px);
+        }
+
+        .feature-chip.yellow {
+            background: rgba(251, 191, 36, 0.25);
+            border-color: rgba(251, 191, 36, 0.6);
+        }
+
+        .info-box {
+            background: rgba(255,255,255,0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            text-align: left;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .info-box-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #667eea;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+
+        .check-icon {
+            color: #10b981;
+            font-weight: bold;
+            flex-shrink: 0;
+            margin-top: 5px;
+        }
+
+        .info-item-text h3 {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .info-item-text p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .stats {
+            background: #f9f9f9;
+            padding: 60px 40px;
+            margin: 60px 0;
+        }
+
+        .stats-container {
+            max-width: 100%;
+            margin: 0;
+            padding: 0 40px;
+            text-align: center;
+        }
+
+        .stats h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .stats-intro {
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #d32f2f;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .stat-description {
+            font-size: 0.85rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        .alert {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .alert-text {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .features-section {
+            padding: 80px 40px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-color: #667eea;
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .feature-card > p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .feature-highlight {
+            background: #667eea;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .feature-benefits {
+            list-style: none;
+        }
+
+        .feature-benefits li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .security-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 40px;
+            margin: 60px 0;
+        }
+
+        .security-container {
+            max-width: 100%;
+            margin: 0;
+            padding: 0 40px;
+        }
+
+        .security-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .security-title h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .security-title p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .security-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .security-card {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .security-card h3 {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .security-card p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .testimonials-section {
+            padding: 80px 40px;
+            background: #f9f9f9;
+        }
+
+        .testimonials-container {
+            max-width: 100%;
+            margin: 0;
+            padding: 0 40px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .testimonials-title h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 40px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #667eea;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+
+        .testimonial-info h4 {
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+
+        .testimonial-role {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .rating {
+            color: #ffc107;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-text {
+            color: #666;
+            font-style: italic;
+        }
+
+        .pricing-section {
+            padding: 80px 40px;
+        }
+
+        .pricing-container {
+            max-width: 100%;
+            margin: 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .pricing-title h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .pricing-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 40px 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pricing-card.popular {
+            border-color: #667eea;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+            transform: scale(1.05);
+        }
+
+        .pricing-badge {
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .pricing-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .pricing-price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .pricing-currency {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 30px;
+            min-height: 250px;
+        }
+
+        .pricing-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #555;
+            margin-top: 20px;
+            padding-top: 20px;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        .announcement-banner {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            z-index: 99;
+            background: linear-gradient(90deg, #FF6B35, #F7931E, #FF6B35);
+            color: white;
+            padding: 10px 0;
+            overflow: hidden;
+        }
+
+        .announcement-scroll {
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            animation: scroll 60s linear infinite;
+            padding-right: 100vw;
+        }
+
+        .announcement-text {
+            font-weight: bold;
+            font-size: 1rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            display: inline-block;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(100vw); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 20px 60px;
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 0 40px;
+            align-items: flex-start;
+        }
+
+        @media (max-width: 1024px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .info-box {
+                margin: 40px auto 0;
+                max-width: 500px;
+                text-align: left;
+            }
+        }
+
+        .hero-left {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero-right {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .security-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .pricing-card.popular {
+                transform: scale(1);
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="Prism Heirloom Logo">
+                <div>
+                    <div class="logo-text">Prism Heirloom</div>
+                    <div class="logo-tagline">Wealth Today, Legacy Tomorrow</div>
+                </div>
+            </div>
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#security">Security</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Announcement Banner -->
+    <div class="announcement-banner">
+        <div class="announcement-scroll">
+            <span class="announcement-text">
+                Never Lose Track of Assets &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;
+                Create & Update Wills Instantly &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;
+                💰 Save big while securing your legacy and protecting future! &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;
+                🔒 Bank-grade security included with all plans! &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;
+                🤖 AI-Powered Intelligence &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;
+            </span>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-grid">
+            <!-- Left Column -->
+            <div class="hero-left">
+                <div class="chip">🌍 Trusted by families worldwide</div>
+
+                <h1>Secure Your Legacy, <span class="highlight">Protect Your Future</span></h1>
+
+                <p>Never lose track of your wealth again. Manage all your assets, liabilities, documents, and create legally compliant wills - all in one secure, AI-powered platform.</p>
+
+                <p>Ensure your family knows about every penny you've worked for. Don't let your hard-earned assets become part of the $70B+ in unclaimed wealth.</p>
+
+                <div class="hero-features">
+                    <div class="feature-chip">🤖 AI Document Extraction</div>
+                    <div class="feature-chip">💡 AI Financial Insights</div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="hero-right">
+                <div class="info-box">
+                    <div class="info-box-title">✓ Why Families Trust Us</div>
+                    
+                    <div class="info-item">
+                        <div class="check-icon">✓</div>
+                        <div class="info-item-text">
+                            <h3>Never Lose Track of Assets</h3>
+                            <p>$70B+ sits unclaimed. Ensure your family knows about every penny you've earned.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="check-icon">✓</div>
+                        <div class="info-item-text">
+                            <h3>Create & Update Wills Instantly</h3>
+                            <p>Generate legal wills in minutes. Update anytime as your assets change - no lawyer needed.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="check-icon">✓</div>
+                        <div class="info-item-text">
+                            <h3>Bank-Grade Security</h3>
+                            <p>256-bit encryption, zero-knowledge architecture. Even we can't access your data.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="check-icon">✓</div>
+                        <div class="info-item-text">
+                            <h3>All-in-One Platform</h3>
+                            <p>Assets, liabilities, documents, passwords, wills, video messages - everything in one place.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="check-icon">✓</div>
+                        <div class="info-item-text">
+                            <h3>Smart Reminders</h3>
+                            <p>Never miss insurance premiums, loan payments, or important financial deadlines.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="check-icon">✓</div>
+                        <div class="info-item-text">
+                            <h3>🤖 AI-Powered Intelligence</h3>
+                            <p>Smart document extraction, financial insights, and automated categorization.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <h2>The Hidden Crisis of Forgotten Assets</h2>
+            <p class="stats-intro">Billions in assets go unclaimed every year. Don't let your family's future be at risk.</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">$70B+</div>
+                    <div class="stat-label">Unclaimed Assets (US)</div>
+                    <div class="stat-description">Lost to families forever</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-number">₹67000 Cr</div>
+                    <div class="stat-label">Unclaimed Money (India)</div>
+                    <div class="stat-description">Sitting in banks unclaimed</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-number">9 in 10</div>
+                    <div class="stat-label">People Affected</div>
+                    <div class="stat-description">Have unclaimed assets</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-number">Less than 15%</div>
+                    <div class="stat-label">Without a Will</div>
+                    <div class="stat-description">Could lead to lost assets or disputes</div>
+                </div>
+            </div>
+
+            <p style="font-style: italic; color: #999; margin-bottom: 20px;">
+                Sources: NAUPA (US), ASIC (Australia), RBI (India), National Will Registry
+            </p>
+
+            <div class="alert">
+                <p class="alert-text">💡 Don't become another statistic. Start organizing your assets today and ensure your family knows about every penny you've worked for.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="section-title">
+            <h2>Everything You Need to Secure Your Legacy</h2>
+            <p>Comprehensive tools to manage, protect, and share your most important information. Never let your assets become part of the unclaimed billions.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">💼</div>
+                <h3>Comprehensive Asset Management</h3>
+                <p>Never lose track of your wealth again. Manage real estate, bank accounts, investments, vehicles, companies, patents, jewellery, and digital assets in one secure location.</p>
+                <div class="feature-highlight">Track unlimited assets with fair usage policy</div>
+                <ul class="feature-benefits">
+                    <li>✓ Real estate portfolio tracking</li>
+                    <li>✓ Bank account monitoring</li>
+                    <li>✓ Investment portfolio management</li>
+                    <li>✓ Vehicle & asset documentation</li>
+                    <li>✓ Company & patent tracking</li>
+                    <li>✓ Jewellery & valuables inventory</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📈</div>
+                <h3>Smart Liability Tracking</h3>
+                <p>Stay on top of your financial obligations with intelligent tracking and automated reminders for loans, credit cards, rentals, and debts.</p>
+                <div class="feature-highlight">Automated payment reminders and financial insights</div>
+                <ul class="feature-benefits">
+                    <li>✓ Loan payment tracking</li>
+                    <li>✓ Credit card management</li>
+                    <li>✓ Rental property tracking</li>
+                    <li>✓ Short-term receivables & payables</li>
+                    <li>✓ Payment due reminders</li>
+                    <li>✓ Debt consolidation insights</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Secure Document Vault</h3>
+                <p>Your important documents, safely encrypted and accessible anywhere. From passports to property deeds, everything in one place.</p>
+                <div class="feature-highlight">Military-grade encryption for all documents</div>
+                <ul class="feature-benefits">
+                    <li>✓ Bank-grade 256-bit encryption</li>
+                    <li>✓ Unlimited document storage</li>
+                    <li>✓ Smart categorization by asset type</li>
+                    <li>✓ Quick search & retrieval</li>
+                    <li>✓ Secure document sharing</li>
+                    <li>✓ Mobile access on the go</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3>Trusted Nominee & Well-Wisher Network</h3>
+                <p>Ensure your loved ones can access critical information when they need it most. Set up a secure network of trusted contacts with controlled access.</p>
+                <div class="feature-highlight">Peace of mind for you and your family</div>
+                <ul class="feature-benefits">
+                    <li>✓ Designate nominees & well-wishers</li>
+                    <li>✓ Emergency access protocols</li>
+                    <li>✓ Controlled information sharing</li>
+                    <li>✓ Automated wellness checks</li>
+                    <li>✓ Secure notification system</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔑</div>
+                <h3>Advanced Password Vault</h3>
+                <p>Never forget another password. Store, generate, and manage all your credentials with enterprise-grade security.</p>
+                <div class="feature-highlight">Zero-knowledge architecture - even we can't see your passwords</div>
+                <ul class="feature-benefits">
+                    <li>✓ Unlimited password storage</li>
+                    <li>✓ Secure password generation</li>
+                    <li>✓ Zero-knowledge encryption</li>
+                    <li>✓ Cross-device sync</li>
+                    <li>✓ Multi-factor authentication</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📋</div>
+                <h3>Digital Will Creation & Management</h3>
+                <p>Create legally compliant wills from your stored data. Include video messages and ensure your wishes are clearly documented. Update anytime as your assets change.</p>
+                <div class="feature-highlight">Revise wills at the click of a button - no stale wills</div>
+                <ul class="feature-benefits">
+                    <li>✓ Wizard-generated legal wills</li>
+                    <li>✓ Unlimited will revisions</li>
+                    <li>✓ Video message integration</li>
+                    <li>✓ High-level & per-asset allocation</li>
+                    <li>✓ Always in sync with changing assets</li>
+                    <li>✓ Legal compliance checks</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎥</div>
+                <h3>Personal Video Messages</h3>
+                <p>Record heartfelt video messages for your loved ones. Attach them to your will or share them with specific nominees.</p>
+                <div class="feature-highlight">Leave a personal legacy beyond just assets</div>
+                <ul class="feature-benefits">
+                    <li>✓ Record or upload videos</li>
+                    <li>✓ Attach to wills as proof</li>
+                    <li>✓ Personal messages for family</li>
+                    <li>✓ Secure encrypted storage</li>
+                    <li>✓ Accessible to designated recipients</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔔</div>
+                <h3>Smart Reminders & Notifications</h3>
+                <p>Never miss important dates. Get automated reminders for insurance premiums, loan payments, credit card dues, and more.</p>
+                <div class="feature-highlight">Stay on top of all your financial obligations</div>
+                <ul class="feature-benefits">
+                    <li>✓ Insurance premium reminders</li>
+                    <li>✓ Loan payment alerts</li>
+                    <li>✓ Credit card due dates</li>
+                    <li>✓ Rental payment tracking</li>
+                    <li>✓ Custom reminder setup</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3>Multi-Currency & Global Support</h3>
+                <p>Built for global users managing assets across multiple countries. Track assets in different currencies and jurisdictions.</p>
+                <div class="feature-highlight">Perfect for expatriates and global investors</div>
+                <ul class="feature-benefits">
+                    <li>✓ Multi-currency support</li>
+                    <li>✓ Global asset tracking</li>
+                    <li>✓ Cross-border portfolio management</li>
+                    <li>✓ International compliance</li>
+                    <li>✓ Trusted by families worldwide</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Section -->
+    <section id="security" class="security-section">
+        <div class="security-container">
+            <div class="security-title">
+                <h2>Bank-Grade Security You Can Trust</h2>
+                <p>Your financial data is your most sensitive information. We protect it with the same security standards used by global banks and military organizations.</p>
+            </div>
+
+            <div class="security-grid">
+                <div class="security-card">
+                    <h3>🛡️ 256-Bit Military-Grade Encryption</h3>
+                    <p>256-bit AES encryption protects your data both in transit and at rest, the same standard used by major financial institutions and military organizations.</p>
+                </div>
+
+                <div class="security-card">
+                    <h3>👆 Multi-Factor Authentication</h3>
+                    <p>Password vault and sensitive operations protected by MFA. All documents encrypted before storage with additional layer of security.</p>
+                </div>
+
+                <div class="security-card">
+                    <h3>🔐 Zero-Knowledge Architecture</h3>
+                    <p>Even our team cannot access your sensitive information like documents and passwords. Your encryption keys stay with you.</p>
+                </div>
+
+                <div class="security-card">
+                    <h3>💾 99.9% Uptime Guarantee</h3>
+                    <p>Your data is automatically backed up across multiple secure data centers with 99.9% uptime guarantee. Access your vault anytime, anywhere.</p>
+                </div>
+
+                <div class="security-card">
+                    <h3>✓ Regular Security Audits</h3>
+                    <p>Independent security audits and penetration testing ensure your data remains protected against emerging threats.</p>
+                </div>
+
+                <div class="security-card">
+                    <h3>🏦 Built by Banking Experts</h3>
+                    <p>Our team comprises high-end technologists from global banks who understand financial data security at the deepest level.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="testimonials-container">
+            <div class="testimonials-title">
+                <h2>Trusted by Financial Professionals</h2>
+            </div>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">SJ</div>
+                    <div class="testimonial-info">
+                        <h4>Sarah Johnson</h4>
+                        <div class="testimonial-role">Financial Advisor</div>
+                    </div>
+                </div>
+                <div class="rating">★★★★★</div>
+                <p class="testimonial-text">"This platform has revolutionized how I help my clients organize their financial lives. The comprehensive asset tracking is incredible."</p>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">MC</div>
+                    <div class="testimonial-info">
+                        <h4>Michael Chen</h4>
+                        <div class="testimonial-role">Business Owner</div>
+                    </div>
+                </div>
+                <div class="rating">★★★★★</div>
+                <p class="testimonial-text">"Finally, a secure place to store all my business and personal documents. The nominee feature gives me peace of mind."</p>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">ER</div>
+                    <div class="testimonial-info">
+                        <h4>Emily Rodriguez</h4>
+                        <div class="testimonial-role">Estate Planner</div>
+                    </div>
+                </div>
+                <div class="rating">★★★★★</div>
+                <p class="testimonial-text">"The digital will creation feature is a game-changer. My clients love how easy it is to keep their wills updated."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section">
+        <div class="pricing-container">
+            <div class="pricing-title">
+                <h2>Simple, Transparent Pricing</h2>
+            </div>
+        </div>
+
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="pricing-name">FREE</div>
+                <div class="pricing-price">₹0</div>
+                <div class="pricing-currency">Forever</div>
+                <ul class="pricing-features">
+                    <li>✓ Basic asset tracking (2 per class)</li>
+                    <li>✓ Nominee management</li>
+                    <li>✓ Basic insurance tracking</li>
+                    <li>✓ Limited debts tracking</li>
+                    <li>✓ Document upload (5 docs, 25MB)</li>
+                    <li>✓ Basic reminders</li>
+                </ul>
+            </div>
+
+            <div class="pricing-card popular">
+                <div class="pricing-badge">MOST POPULAR</div>
+                <div class="pricing-name">PREMIUM</div>
+                <div class="pricing-price">₹1599</div>
+                <div class="pricing-currency">per year</div>
+                <ul class="pricing-features">
+                    <li>✓ All Basic features</li>
+                    <li>✓ AI Document Extraction</li>
+                    <li>✓ Will Generation</li>
+                    <li>✓ Unlimited Will Changes</li>
+                    <li>✓ Video Messages in Will</li>
+                    <li>✓ Password Vault</li>
+                    <li>✓ Early access to new features</li>
+                </ul>
+            </div>
+
+            <div class="pricing-card">
+                <div class="pricing-name">STANDARD</div>
+                <div class="pricing-price">₹499</div>
+                <div class="pricing-currency">per year</div>
+                <ul class="pricing-features">
+                    <li>✓ All Basic features</li>
+                    <li>✓ AI Document Extraction</li>
+                    <li>✓ Unlimited Assets & Liabilities</li>
+                    <li>✓ Unlimited reminders</li>
+                    <li>✓ Custom reminder setup</li>
+                    <li>✓ Unlimited document upload</li>
+                    <li>✓ Priority support</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="features-section">
+        <div class="section-title">
+            <h2>About Prism Heirloom</h2>
+            <p>We believe everyone deserves to secure their legacy and protect their family's future. Founded by banking experts, we're on a mission to end the crisis of unclaimed assets.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="features-section">
+        <div class="section-title">
+            <h2>Get In Touch</h2>
+            <p>Have questions? We'd love to hear from you. Contact us anytime.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p style="font-size: 1.3rem; font-weight: bold; margin-bottom: 10px;">Prism Heirloom</p>
+            <p style="margin-bottom: 20px;">Secure Your Legacy, Protect Your Future</p>
+            
+            <div class="footer-links">
+                <a href="#features">Features</a>
+                <a href="#security">Security</a>
+                <a href="#pricing">Pricing</a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Prism Heirloom. All rights reserved.</p>
+                <p>Wealth Today, Legacy Tomorrow</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
